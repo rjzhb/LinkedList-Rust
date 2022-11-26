@@ -26,6 +26,7 @@ impl LinkedList {
         if let Some(mut node) = self.head.as_mut().take() {
             new_head.next(node.as_ref());
             node.prev(new_head);
+            
         }
         self.head = Some(new_head);
 
