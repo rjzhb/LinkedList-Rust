@@ -19,6 +19,7 @@ impl LinkedList {
     fn is_empty(&self) -> bool {
         self.head.is_none() || self.tail.is_none()
     }
+    
 
     fn push_front(&mut self, value: i32) {
         let mut new_head = Node::new(value);
