@@ -1,9 +1,9 @@
-include!{"LinkedList.rs"}
+include! {"LinkedList.rs"}
 
 fn main() {
     let mut list = LinkedList::new();
     list.push_front(2);
     list.push_front(3);
 
-    println!("Hello, world!");
+    list.print_out();
 }

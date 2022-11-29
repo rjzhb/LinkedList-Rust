@@ -1,25 +1,18 @@
-
+use std::cell::RefCell;
+use std::rc::{Rc, Weak};
 #[derive(Debug, Clone)]
 struct Node {
     value: i32,
-    next: Option<Box<Node>>,
-    prev: Option<Box<Node>>,
+    next: Option<Rc<RefCell<Node>>>,
+    prev: Option<Weak<RefCell<Node>>>,
 }
 
 impl Node {
-    fn new(value: i32) -> Box<Node> {
-        Box::new(Node {
+    fn new(value: i32) -> Self {
+        Node {
             value,
             next: None,
             prev: None,
-        })
-    }
-
-    fn next(&mut self, node: Box<Node>) {
-        self.next = Some(node);
-    }
-
-    fn prev(&mut self, node: Box<Node>) {
-        self.prev = Some(node);
+        }
     }
 }
