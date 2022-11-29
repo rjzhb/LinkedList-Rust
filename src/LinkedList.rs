@@ -61,11 +61,25 @@ impl LinkedList {
         }
     }
 
-    fn insert_next(&mut self, node: &mut Node){
+    fn insert_next(&mut self, node: &mut Option<Rc<RefCell<Node>>>, next_node: Node) -> bool {
+        
+        match &node {
+            None => {
+                return false;
+            }
 
+            Some(current_node) => {
+                let temp_node = current_node.next;
+                current_node.next = Some(Rc::clone(&current_node));
+ 
+
+            }
+        }
+
+        true
     }
 
-    fn insert_prev(&mut self, node: &mut Node){
+    fn insert_prev(&mut self, node: &mut Node, prev_node: Node) {
 
     }
 
