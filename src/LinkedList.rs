@@ -71,8 +71,6 @@ impl LinkedList {
             Some(current_node) => {
                 let temp_node = current_node.next;
                 current_node.next = Some(Rc::clone(&current_node));
- 
-
             }
         }
 
