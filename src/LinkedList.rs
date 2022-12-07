@@ -26,6 +26,7 @@ impl LinkedList {
         let mut new_head = Node::new(value);
         match &self.head {
             None => {
+                
                 let node = Rc::new(RefCell::new(Node::new(value)));
                 self.head = Some(Rc::clone(&node));
                 self.tail = Some(Rc::clone(&node));
